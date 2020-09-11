@@ -1,27 +1,15 @@
 pipeline {
     gent {
         docker {
-            image 'node:6-alpine'
-            args '-p 3000:3000'
+            image 'openjdk:8-jdk-alpine'
+            args '-p 8085:8080'
         }
     }
-    environment {
-        CI = 'true'
-    }
+    
     stages {
         stage('1st step') {
             echo 'Hello, JDK'
             sh 'java -version'
         }
     
-        stage('2nd step') {
-            steps {
-                sh './src/main/test.sh'
-            }
-        }
-        stage('final step') {
-            echo 'Bravo et au revoir'
-          
-        }
-    }
 }
