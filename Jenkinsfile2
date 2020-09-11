@@ -32,6 +32,15 @@ pipeline {
         always {
             echo 'voici le compte rendu'
         }
+        regression {
+            echo 'the release KO ==> regression'
+        }
+        success {
+            echo 'TEST OK'
+        }
+        failure {
+            echo 'TEST KO'
+        }
     }
     
 }
