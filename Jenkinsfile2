@@ -27,6 +27,25 @@ pipeline {
                 echo 'not run'
             }
         }
+        stage(‘Deploy’) {
+            parallel {
+                stage (‘Branch A’) {
+                    steps {
+                        echo ‘Etape branche A’
+                    }
+                }
+                stage (‘Branch B’) {
+                    steps {
+                        echo ‘Etape branche B’
+                    }
+                }
+            }
+        }
+        stage('TEST') {
+            steps {
+                echo 'FIN PARALLE'
+            }
+        }
     }
     post {
         always {
