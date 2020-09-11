@@ -11,10 +11,20 @@ pipeline {
     
     stages {
         stage('1st step') {
-             when { branch ‘dev' }
+            when { 
+                 branch 'master' 
+            }
             steps {
                 echo 'Hello, JDK'
                 sh 'java -version'
+            }
+        }
+        stage('not exct') {
+            when { 
+                 branch 'dev' 
+            }
+            steps {
+                echo 'not run'
             }
         }
     }
