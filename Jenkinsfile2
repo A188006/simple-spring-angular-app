@@ -1,6 +1,6 @@
 pipeline {
     triggers{
-        cron('0/30 0 0 ? * * *')
+        cron('H/1 * * * *')
     }
     agent {
         docker {
