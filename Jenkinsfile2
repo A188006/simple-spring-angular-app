@@ -1,0 +1,32 @@
+pipeline {
+    gent {
+        docker {
+            image 'node:6-alpine'
+            args '-p 3000:3000'
+        }
+    }
+    environment {
+        CI = 'true'
+    }
+    stages {
+        stage('1st step') {
+            echo 'Hello, JDK'
+            sh 'java -version'
+        }
+    
+        stage('2nd step') {
+            steps {
+                sh "./mvnw"
+            }
+        }
+        stage('3rd step') {
+            steps {
+                sh './src/main/test.sh'
+            }
+        }
+        stage('final step') {
+            echo 'Bravo et au revoir'
+            sh 'exit'
+        }
+    }
+}
