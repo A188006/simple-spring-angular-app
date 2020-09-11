@@ -8,8 +8,10 @@ pipeline {
     
     stages {
         stage('1st step') {
-            echo 'Hello, JDK'
-            sh 'java -version'
+            steps {
+                echo 'Hello, JDK'
+                sh 'java -version'
+            }
         }
     }
 }
