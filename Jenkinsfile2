@@ -1,4 +1,7 @@
 pipeline {
+    triggers{
+        cron('0/30 0 0 ? * * *')
+    }
     agent {
         docker {
             image 'openjdk:8-jdk-alpine'
