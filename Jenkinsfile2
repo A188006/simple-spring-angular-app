@@ -29,7 +29,7 @@ pipeline {
         }
         stage('Deploy') {
             parallel {
-                stage ('Branch A’' {
+                stage ('Branch A') {
                     steps {
                         echo 'Etape branche A'
                     }
