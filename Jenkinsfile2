@@ -27,16 +27,16 @@ pipeline {
                 echo 'not run'
             }
         }
-        stage('Deploy’) {
+        stage('Deploy') {
             parallel {
-                stage (‘Branch A’) {
+                stage ('Branch A’' {
                     steps {
-                        echo ‘Etape branche A’
+                        echo 'Etape branche A'
                     }
                 }
-                stage (‘Branch B’) {
+                stage ('Branch B') {
                     steps {
-                        echo ‘Etape branche B’
+                        echo 'Etape branche B'
                     }
                 }
             }
